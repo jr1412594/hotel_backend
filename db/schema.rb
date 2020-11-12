@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_09_172752) do
+ActiveRecord::Schema.define(version: 2020_11_12_201226) do
 
-  create_table "guests", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
+  create_table "arrivals", force: :cascade do |t|
+    t.string "checkin"
+    t.string "checkout"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -29,11 +29,11 @@ ActiveRecord::Schema.define(version: 2020_11_09_172752) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.integer "guest_id"
+    t.integer "arrival_id"
     t.integer "property_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["guest_id"], name: "index_reservations_on_guest_id"
+    t.index ["arrival_id"], name: "index_reservations_on_arrival_id"
     t.index ["property_id"], name: "index_reservations_on_property_id"
   end
 

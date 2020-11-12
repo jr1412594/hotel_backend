@@ -1,4 +1,4 @@
 class Reservation < ApplicationRecord
-    belongs_to :guest
+    belongs_to :arrival
     belongs_to :property
 end
